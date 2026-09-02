@@ -48,12 +48,13 @@ type SectionData = {
   hadiths: Hadith[];
 };
 
+const BASE_PATH = import.meta.env.BASE_URL;
 const ASSETS = {
-  hero: "/assets/ashrat-hero.webp",
-  past: "/assets/ashrat-past.webp",
-  present: "/assets/ashrat-present.webp",
-  future: "/assets/ashrat-future.webp",
-  major: "/assets/ashrat-major.webp",
+  hero: `${BASE_PATH}assets/ashrat-hero.webp`,
+  past: `${BASE_PATH}assets/ashrat-past.webp`,
+  present: `${BASE_PATH}assets/ashrat-present.webp`,
+  future: `${BASE_PATH}assets/ashrat-future.webp`,
+  major: `${BASE_PATH}assets/ashrat-major.webp`,
 };
 
 const sections: SectionData[] = [
