@@ -49,11 +49,11 @@ type SectionData = {
 };
 
 const ASSETS = {
-  hero: "/manus-storage/ashrat-hero_a888b2c2.jpg",
-  past: "/manus-storage/ashrat-past_1e75a874.jpg",
-  present: "/manus-storage/ashrat-present_55b68aed.jpg",
-  future: "/manus-storage/ashrat-future_3fde7244.jpg",
-  major: "/manus-storage/ashrat-major_cc6d32f1.jpg",
+  hero: "/assets/ashrat-hero.webp",
+  past: "/assets/ashrat-past.webp",
+  present: "/assets/ashrat-present.webp",
+  future: "/assets/ashrat-future.webp",
+  major: "/assets/ashrat-major.webp",
 };
 
 const sections: SectionData[] = [
