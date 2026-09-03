@@ -35,3 +35,17 @@
 - رابط GitHub Pages أعاد 404 لأن إعداد Pages كان `legacy` من فرع `main` والمسار `/`، بينما جذر المستودع لا يحتوي `index.html`؛ التطبيق موجود داخل بنية React ويحتاج build ثم نشر `dist/public`.
 - توثيق Vercel الرسمي يذكر أن المستودعات تُستورد من شاشة New Project، وأن عدم ظهور المستودع يرتبط غالباً بصلاحيات تطبيق GitHub أو نطاق المالك: https://vercel.com/kb/guide/unable-to-find-github-repository
 - توثيق Vercel الرسمي يشرح أن `main` هو اختيار الإنتاج المعتاد وأن تغيير فرع الإنتاج يتم من إعدادات Production وBranch Tracking: https://vercel.com/docs/git و https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production
+
+
+## التحقق الأخير
+
+- `https://signs-of-the-hour.vercel.app/` يعرض الموقع فعلياً بنجاح.
+- `https://omdapay.github.io/Signs-of-the-Hour/` يعيد 404 بعد نجاح workflow لأن إعداد GitHub Pages الحالي ما زال `legacy` من `main` والمسار `/`، ولا يوجد `index.html` في جذر المستودع.
+- workflow `Deploy site to GitHub Pages` نجح في بناء ورفع artifact، لكن رمز GitHub المستخدم لا يملك صلاحية API لتغيير إعداد Pages من legacy إلى workflow؛ البديل العملي هو جعل الجذر متوافقاً مع إعداد legacy أو تغيير Source يدوياً من إعدادات Pages.
+
+
+## حالة GitHub Pages بعد إصلاح الجذر
+
+- بعد دفع `index.html` و`assets/` إلى `main` ونجاح workflow، بقي الرابط العام يعرض 404.
+- إعداد Pages عبر API ما زال `build_type: legacy` من `main` والمسار `/`، بينما محاولة تحويله إلى `workflow` أعادت 403 بسبب صلاحية التكامل.
+- يلزم من مالك الحساب تغيير Source من إعدادات المستودع إلى GitHub Actions، أو إعادة حفظ إعداد legacy بعد التأكد من الفرع والمسار؛ رابط Vercel يعمل بالفعل.
